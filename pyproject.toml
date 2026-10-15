@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sec-document-extraction"
+version = "0.1.0"
+requires-python = ">=3.10"
+description = "Utilities for fetching and processing SEC documents."
+readme = "README.md"
+dependencies = [
+	"python-dotenv>=1.0.1,<2.0.0",
+	"beautifulsoup4>=4.13.4,<5.0.0",
+	"fastapi>=0.115.0,<1.0.0",
+	"httpx>=0.28.0,<1.0.0",
+	"reportlab>=4.4.4,<5.0.0",
+	"requests>=2.32.3,<3.0.0",
+	"uvicorn>=0.32.0,<1.0.0",
+]
+
+[project.scripts]
+sec-document-extraction = "app.main:main"
+sec-document-extraction-api = "app.api.app:main"
+
+[tool.setuptools.packages.find]
+include = ["app*"]
